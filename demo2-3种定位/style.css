@@ -1,0 +1,64 @@
+.box {
+    width: 100px;
+    height: 100px;
+}
+
+/* 
+相对定位
+1、脱离文档流
+2、依旧保留原有位置
+3、相当于自身原有位置进行偏移
+*/
+.red-box {
+    background: red;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+.blue-box {
+    background: blue;
+
+}
+
+/*
+绝对定位
+1、脱离文档流
+2、不保留原有位置
+3、相对于离它最近的有定位的包裹元素进行偏移
+*/
+.outer,
+.inner {
+    border: 4px solid #000;
+    padding: 100px;
+}
+
+.inner {
+    position: relative;
+}
+
+.green-box {
+    background: green;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* 
+固定定位
+1、脱离文档流
+2、不保留原有位置
+3、相对于浏览器窗口进行偏移
+*/
+.yellow-box {
+    background: yellow;
+    position: fixed;
+    top: 100px;
+    z-index: 10;
+}
+
+/* 
+定位元素的层级控制
+1、默认情况下，后定位的元素覆盖先定位的元素，后来居上
+2、使用z-index动态控制定位元素的层级
+*/
