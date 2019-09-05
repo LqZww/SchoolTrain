@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.cont {
+    width: 300px;
+    height: 300px;
+    /* border: 1px solid red; */
+    position: relative;
+    margin: 150px 500px;
+    transform-style: preserve-3d;
+    /* perspective: 2000px; */
+    transition: all 2s;
+    transform-origin: center center 150px;
+    animation: cont 5s linear infinite;
+}
+
+@keyframes cont {
+    from {
+        transform: rotateX(0) rotateY(0);
+    }
+
+    to {
+        transform: rotateX(360ged) rotateY(360ged);
+    }
+}
+
+.cont img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.85;
+    transition: all 1s;
+    border-radius: 10px;
+}
+
+.sm-box {
+    width: 100px;
+    height: 100px;
+    /* border: 1px solid blue; */
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    transform-style: preserve-3d;
+    perspective: 2000px;
+    transform: translateZ(100px);
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    background: url(./img/7.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+.box:nth-child(1),
+img:nth-child(1) {
+    transform-origin: center top;
+    transform: rotateX(90deg);
+}
+
+
+.box:nth-child(2),
+img:nth-child(2) {
+    transform-origin: center bottom;
+    transform: rotateX(-90deg);
+}
+
+.box:nth-child(3),
+img:nth-child(3) {
+    transform-origin: left center;
+    transform: rotateY(-90deg);
+}
+
+.box:nth-child(4),
+img:nth-child(4) {
+    transform-origin: right center;
+    transform: rotateY(90deg);
+}
+
+.box:nth-child(5) {
+    transform: translateZ(100px);
+}
+
+img:nth-child(5) {
+    transform: translateZ(300px);
+}
+
+.cont:hover img:nth-child(1) {
+    transform: translateY(-100px) rotateX(90deg);
+}
+
+.cont:hover img:nth-child(2) {
+    transform: translateY(100px) rotateX(-90deg);
+}
+
+.cont:hover img:nth-child(3) {
+    transform: translateX(-100px) rotateY(-90deg);
+}
+
+.cont:hover img:nth-child(4) {
+    transform: translateX(100px) rotateY(90deg);
+}
+
+.cont:hover img:nth-child(5) {
+    transform: translateZ(400px);
+}
+
+.cont:hover img:nth-child(6) {
+    transform: translateZ(-100px);
+}
+
+body:hover .cont {
+    transform: rotateX(360deg) rotateY(360deg);
+}
